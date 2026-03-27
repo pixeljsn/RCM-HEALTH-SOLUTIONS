@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="RCM Health Solutions helps healthcare organizations maximize revenue performance with billing, denial management, and analytics." />
-  <title>RCM Health Solutions | Revenue Cycle Excellence</title>
+  <title>RCM Health Solutions</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -13,87 +12,74 @@
 <body>
   <header class="site-header">
     <div class="container nav">
-      <a class="brand" href="#home" aria-label="RCM Health Solutions home">
-        <span class="brand-mark">+</span>
-        <span>RCM Health Solutions</span>
-      </a>
-      <nav id="main-nav" aria-label="Main navigation"></nav>
-      <a class="btn btn-sm btn-primary nav-cta" id="header-cta" href="#contact">Schedule a Call</a>
+      <a class="brand" href="#">RCM Health Solutions</a>
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#why-us">Why Us</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
   </header>
 
-  <main id="home">
+  <main>
     <section class="hero">
-      <div class="container hero-layout">
-        <div>
-          <p class="eyebrow">Healthcare Revenue Cycle Management</p>
-          <h1>Built to improve collections, reduce denials, and protect margin.</h1>
-          <p class="lead">
-            We partner with practices, hospitals, and specialty groups to modernize billing operations,
-            increase clean-claim rates, and deliver measurable financial outcomes.
-          </p>
-          <div class="actions" id="hero-actions"></div>
-          <ul class="hero-metrics">
-            <li><strong>98%</strong><span>Clean Claim Rate</span></li>
-            <li><strong>35%</strong><span>Denial Reduction</span></li>
-            <li><strong>24/7</strong><span>Revenue Visibility</span></li>
-          </ul>
+      <div class="container hero-content">
+        <p class="eyebrow">Revenue Cycle Management for Modern Healthcare</p>
+        <h1>Accelerate reimbursements and reduce denials with confidence.</h1>
+        <p class="lead">
+          We help providers optimize billing workflows, improve claim accuracy,
+          and deliver measurable financial outcomes.
+        </p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#contact">Book a Consultation</a>
+          <a class="btn btn-outline" href="#services">Explore Services</a>
         </div>
-        <aside class="hero-panel" aria-label="Performance highlights">
-          <h2>Performance Snapshot</h2>
-          <p>Actionable analytics and transparent operational support for stronger cash flow.</p>
-          <div class="kpi-list" id="kpi-list"></div>
-          <a id="panel-link" class="text-link" href="#contact">Talk to an RCM specialist →</a>
-        </aside>
       </div>
     </section>
 
     <section id="services" class="section container">
-      <div class="section-head">
-        <p class="eyebrow">What We Deliver</p>
-        <h2>End-to-end support across the revenue lifecycle</h2>
+      <h2>Core Services</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Medical Billing</h3>
+          <p>End-to-end billing support tailored to your specialty and payer mix.</p>
+        </article>
+        <article class="card">
+          <h3>Denial Management</h3>
+          <p>Root-cause analysis and appeals that increase first-pass claim acceptance.</p>
+        </article>
+        <article class="card">
+          <h3>AR Follow-Up</h3>
+          <p>Proactive account follow-up to reduce aging buckets and speed collections.</p>
+        </article>
       </div>
-      <div id="service-grid" class="grid"></div>
     </section>
 
     <section id="why-us" class="section section-alt">
-      <div class="container two-col">
-        <div>
-          <p class="eyebrow">Why RCM Health Solutions</p>
-          <h2>Senior-level strategy with execution-focused delivery</h2>
-          <p class="lead">
-            Our teams blend payer expertise, workflow redesign, and continuous QA so your front-end and
-            back-end operations work together.
-          </p>
-        </div>
-        <ul class="benefits" id="benefits-list"></ul>
+      <div class="container">
+        <h2>Why teams choose us</h2>
+        <ul class="benefits">
+          <li>Specialized healthcare revenue cycle expertise.</li>
+          <li>Transparent reporting with actionable KPIs.</li>
+          <li>Scalable support for practices and health systems.</li>
+        </ul>
       </div>
     </section>
 
-    <section id="insights" class="section container">
-      <div class="section-head">
-        <p class="eyebrow">Insights</p>
-        <h2>Useful resources for financial and operational leaders</h2>
-      </div>
-      <div class="grid" id="insights-grid"></div>
-    </section>
-
-    <section id="contact" class="section cta-section">
-      <div class="container cta-wrap">
-        <h2>Ready to improve net collections and cash acceleration?</h2>
-        <p>Let’s map your current-state performance and identify immediate revenue opportunities.</p>
-        <div class="actions" id="contact-actions"></div>
-      </div>
+    <section id="contact" class="section container contact">
+      <h2>Let’s improve your cash flow</h2>
+      <p>Email us at <a href="mailto:hello@rcmhealthsolutions.com">hello@rcmhealthsolutions.com</a></p>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-layout">
+    <div class="container">
       <p>© <span id="year"></span> RCM Health Solutions. All rights reserved.</p>
-      <a class="text-link" href="#home">Back to top ↑</a>
     </div>
   </footer>
 
-  <script src="app.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
