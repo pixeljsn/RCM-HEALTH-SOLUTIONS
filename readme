@@ -1,1 +1,35 @@
+# RCM Health Solutions Landing Page
 
+Static, GitHub Pages-ready marketing site for **RCM Health Solutions**.
+
+## Project files
+
+- `index.html` — semantic section structure and placeholders for dynamic content.
+- `styles.css` — responsive visual system, layout, cards, buttons, and typography.
+- `app.js` — centralized content + href configuration and DOM rendering.
+
+## Publish on GitHub Pages
+
+1. Push your repository to GitHub.
+2. Go to **Settings → Pages**.
+3. Under **Build and deployment**, select:
+   - **Source:** Deploy from a branch
+   - **Branch:** `main` (or your default branch)
+   - **Folder:** `/ (root)`
+4. Save and wait for deployment.
+
+Your site URL will be: `https://<your-username>.github.io/<repo-name>/`
+
+## Local preview
+
+```bash
+python -m http.server 8000
+```
+
+Open: `http://localhost:8000`
+
+## Customize quickly
+
+- Update all links in one place via the `hrefs` object in `app.js`.
+- Edit section content arrays in `app.js` (`services`, `results`, `insights`, etc.).
+- Adjust brand colors and spacing in `:root` variables in `styles.css`.
