@@ -1,151 +1,149 @@
+const hrefs = {
+  home: '#home',
+  services: '#services',
+  results: '#results',
+  insights: '#insights',
+  contact: '#contact',
+  strategyCall: 'mailto:hello@rcmhealthsolutions.com?subject=RCM%20Strategy%20Call',
+  phone: 'tel:+18005551234',
+  email: 'mailto:hello@rcmhealthsolutions.com',
+  linkedin: 'https://www.linkedin.com/'
+};
+
 const navItems = [
-  { label: 'Services', href: '#services' },
-  { label: 'Why Us', href: '#why-us' },
-  { label: 'Insights', href: '#insights' },
-  { label: 'Contact', href: '#contact' }
+  { label: 'Services', href: hrefs.services },
+  { label: 'Results', href: hrefs.results },
+  { label: 'Resources', href: hrefs.insights },
+  { label: 'Contact', href: hrefs.contact }
 ];
 
-const ctaLinks = {
-  primary: { label: 'Book a Consultation', href: 'mailto:hello@rcmhealthsolutions.com?subject=RCM%20Consultation' },
-  secondary: { label: 'Explore Services', href: '#services' }
-};
+const heroButtons = [
+  { label: 'Book Strategy Call', href: hrefs.strategyCall, variant: 'btn-primary' },
+  { label: 'View Services', href: hrefs.services, variant: 'btn-outline' }
+];
+
+const metrics = [
+  { value: '98%', label: 'Clean Claim Rate' },
+  { value: '30%+', label: 'Denial Reduction' },
+  { value: '18%', label: 'Net Collections Lift' }
+];
+
+const modelPoints = [
+  'Discovery + baseline KPI review in week one.',
+  'Process redesign mapped to your specialty and payer mix.',
+  'Continuous QA and transparent weekly scorecards.'
+];
+
+const logos = ['Multi-Specialty Groups', 'Urgent Care Networks', 'Behavioral Health', 'ASC & Outpatient'];
 
 const services = [
   {
-    title: 'Medical Billing Operations',
-    description: 'Charge capture, coding handoff, and clean-claim workflows designed for faster reimbursement.'
+    title: 'Medical Billing Management',
+    body: 'Daily claims, coding coordination, scrubbing logic, and exception queues for higher first-pass yield.'
   },
   {
     title: 'Denial Prevention & Appeals',
-    description: 'We identify root causes, correct process gaps, and run strategic appeals to recover revenue.'
+    body: 'Reason-code trend monitoring, process fixes, and appeals workflows to recover avoidable write-offs.'
   },
   {
-    title: 'Accounts Receivable Recovery',
-    description: 'Consistent follow-up and payer escalation paths that reduce aging and improve collection velocity.'
+    title: 'AR Follow-up & Recovery',
+    body: 'Targeted payer follow-up and aging strategy to accelerate reimbursement and reduce old AR buckets.'
   },
   {
-    title: 'RCM Analytics & Reporting',
-    description: 'Role-based dashboards with KPIs that align leadership decisions with operational performance.'
+    title: 'RCM Performance Reporting',
+    body: 'Executive dashboards covering charge lag, acceptance rate, denial %, days in AR, and net collections.'
   }
 ];
 
-const kpis = [
-  { value: '20-40%', detail: 'Average reduction in unresolved denials' },
-  { value: '15-25%', detail: 'Improvement in net collection rate' },
-  { value: '< 48 hrs', detail: 'Turnaround on high-priority AR workflows' }
-];
-
-const benefits = [
-  'Healthcare-only focus with payer and specialty expertise.',
-  'Dedicated account leads and transparent weekly reporting.',
-  'Flexible delivery models for independent practices through multi-site systems.',
-  'Process + technology alignment that supports long-term scale.'
+const results = [
+  { title: 'Faster cash acceleration', body: 'Reduce days in AR with structured payer escalation and queue ownership.' },
+  { title: 'Lower preventable denials', body: 'Fix root causes in intake, eligibility, coding, and authorization capture.' },
+  { title: 'Operational visibility', body: 'Give leaders consistent weekly metrics and improvement actions.' },
+  { title: 'Scalable delivery', body: 'Support single locations and multi-site systems with the same framework.' }
 ];
 
 const insights = [
   {
-    title: 'Denial trend analysis framework',
-    description: 'A practical method to segment denials and prioritize high-impact fixes.',
-    href: '#contact',
-    cta: 'Request framework'
+    title: 'Denial root-cause worksheet',
+    body: 'A practical worksheet to prioritize the highest-impact denial categories.',
+    href: hrefs.contact,
+    cta: 'Request worksheet'
   },
   {
-    title: 'RCM KPI scorecard template',
-    description: 'Track first-pass yield, days in AR, and payer turnaround in one view.',
-    href: '#contact',
+    title: 'RCM KPI operating cadence',
+    body: 'Template cadence for weekly KPI reviews with finance and operations teams.',
+    href: hrefs.contact,
     cta: 'Get template'
   },
   {
-    title: 'Front-office to billing handoff checklist',
-    description: 'Reduce data-entry errors that create preventable claim delays.',
-    href: '#contact',
+    title: 'Eligibility & auth checklist',
+    body: 'Front-office checklist to prevent claim delays before they occur.',
+    href: hrefs.contact,
     cta: 'Download checklist'
   }
 ];
 
-function renderNav() {
-  const nav = document.getElementById('main-nav');
-  nav.innerHTML = navItems
-    .map((item) => `<a href="${item.href}">${item.label}</a>`)
-    .join('');
+const footerLinks = [
+  { label: 'Email Us', href: hrefs.email },
+  { label: 'Call Us', href: hrefs.phone },
+  { label: 'LinkedIn', href: hrefs.linkedin }
+];
+
+function renderList(id, items, mapper) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.innerHTML = items.map(mapper).join('');
 }
 
-function renderHeroActions() {
-  const heroActions = document.getElementById('hero-actions');
-  const headerCTA = document.getElementById('header-cta');
-  const panelLink = document.getElementById('panel-link');
-
-  heroActions.innerHTML = `
-    <a class="btn btn-primary" href="${ctaLinks.primary.href}">${ctaLinks.primary.label}</a>
-    <a class="btn btn-outline" href="${ctaLinks.secondary.href}">${ctaLinks.secondary.label}</a>
-  `;
-
-  headerCTA.href = ctaLinks.primary.href;
-  panelLink.href = ctaLinks.primary.href;
+function initNav() {
+  renderList('main-nav', navItems, (item) => `<a href="${item.href}">${item.label}</a>`);
+  const headerCta = document.getElementById('header-cta');
+  headerCta.href = hrefs.strategyCall;
 }
 
-function renderServices() {
-  const grid = document.getElementById('service-grid');
-  grid.innerHTML = services
-    .map(
-      (service) => `
-      <article class="card">
-        <h3>${service.title}</h3>
-        <p>${service.description}</p>
-      </article>`
-    )
-    .join('');
+function initHero() {
+  renderList('hero-actions', heroButtons, (btn) => `<a class="btn ${btn.variant}" href="${btn.href}">${btn.label}</a>`);
+  renderList('hero-metrics', metrics, (m) => `<li><strong>${m.value}</strong><span>${m.label}</span></li>`);
+  renderList('model-points', modelPoints, (point) => `<p class="pill">${point}</p>`);
+  const heroCardLink = document.getElementById('hero-card-link');
+  heroCardLink.href = hrefs.contact;
 }
 
-function renderKpis() {
-  const list = document.getElementById('kpi-list');
-  list.innerHTML = kpis
-    .map(
-      (kpi) => `
-      <div class="kpi-item">
-        <strong>${kpi.value}</strong>
-        <span>${kpi.detail}</span>
-      </div>`
-    )
-    .join('');
+function initSections() {
+  renderList('logo-list', logos, (name) => `<span>${name}</span>`);
+  renderList('services-grid', services, (item) => `
+    <article class="card">
+      <h3>${item.title}</h3>
+      <p>${item.body}</p>
+    </article>
+  `);
+  renderList('results-grid', results, (item) => `
+    <article class="card soft">
+      <h3>${item.title}</h3>
+      <p>${item.body}</p>
+    </article>
+  `);
+  renderList('insights-grid', insights, (item) => `
+    <article class="card">
+      <h3>${item.title}</h3>
+      <p>${item.body}</p>
+      <a class="text-link card-link" href="${item.href}">${item.cta} →</a>
+    </article>
+  `);
 }
 
-function renderBenefits() {
-  const benefitList = document.getElementById('benefits-list');
-  benefitList.innerHTML = benefits.map((item) => `<li>${item}</li>`).join('');
+function initContactAndFooter() {
+  renderList('contact-actions', [
+    { label: 'Book Strategy Call', href: hrefs.strategyCall, cls: 'btn btn-primary' },
+    { label: 'Call (800) 555-1234', href: hrefs.phone, cls: 'btn btn-outline' }
+  ], (link) => `<a class="${link.cls}" href="${link.href}">${link.label}</a>`);
+
+  renderList('footer-links', footerLinks, (item) => `<a class="text-link" href="${item.href}">${item.label}</a>`);
+
+  document.getElementById('year').textContent = String(new Date().getFullYear());
 }
 
-function renderInsights() {
-  const insightGrid = document.getElementById('insights-grid');
-  insightGrid.innerHTML = insights
-    .map(
-      (item) => `
-      <article class="card">
-        <h3>${item.title}</h3>
-        <p>${item.description}</p>
-        <a class="text-link insight-link" href="${item.href}">${item.cta} →</a>
-      </article>`
-    )
-    .join('');
-}
-
-function renderContactActions() {
-  const contactActions = document.getElementById('contact-actions');
-  contactActions.innerHTML = `
-    <a class="btn btn-primary" href="${ctaLinks.primary.href}">${ctaLinks.primary.label}</a>
-    <a class="btn btn-outline" href="tel:+18005551234">Call (800) 555-1234</a>
-  `;
-}
-
-function setYear() {
-  document.getElementById('year').textContent = new Date().getFullYear();
-}
-
-renderNav();
-renderHeroActions();
-renderServices();
-renderKpis();
-renderBenefits();
-renderInsights();
-renderContactActions();
-setYear();
+initNav();
+initHero();
+initSections();
+initContactAndFooter();

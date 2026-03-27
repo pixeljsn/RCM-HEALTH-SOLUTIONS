@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RCM Health Solutions</title>
+  <meta name="description" content="RCM Health Solutions helps healthcare organizations increase collections, reduce denials, and improve financial operations." />
+  <title>RCM Health Solutions | Revenue Cycle Partner</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -12,74 +13,90 @@
 <body>
   <header class="site-header">
     <div class="container nav">
-      <a class="brand" href="#">RCM Health Solutions</a>
-      <nav>
-        <a href="#services">Services</a>
-        <a href="#why-us">Why Us</a>
-        <a href="#contact">Contact</a>
-      </nav>
+      <a class="brand" href="#home" aria-label="RCM Health Solutions home">
+        <span class="brand-mark">+</span>
+        <span>RCM Health Solutions</span>
+      </a>
+      <nav id="main-nav" aria-label="Main navigation"></nav>
+      <a id="header-cta" class="btn btn-sm btn-primary" href="#contact">Book Strategy Call</a>
     </div>
   </header>
 
-  <main>
+  <main id="home">
     <section class="hero">
-      <div class="container hero-content">
-        <p class="eyebrow">Revenue Cycle Management for Modern Healthcare</p>
-        <h1>Accelerate reimbursements and reduce denials with confidence.</h1>
-        <p class="lead">
-          We help providers optimize billing workflows, improve claim accuracy,
-          and deliver measurable financial outcomes.
-        </p>
-        <div class="actions">
-          <a class="btn btn-primary" href="#contact">Book a Consultation</a>
-          <a class="btn btn-outline" href="#services">Explore Services</a>
+      <div class="container hero-layout">
+        <div class="hero-copy">
+          <p class="eyebrow">Healthcare Revenue Cycle Management</p>
+          <h1>Financial performance support for provider groups that need results.</h1>
+          <p class="lead">
+            We help healthcare organizations modernize billing workflows, prevent denials,
+            and improve net collections with practical operating models.
+          </p>
+          <div class="actions" id="hero-actions"></div>
+          <ul class="metrics" id="hero-metrics" aria-label="Performance metrics"></ul>
         </div>
+        <aside class="hero-card" aria-label="Execution model">
+          <h2>How we work</h2>
+          <p>Embedded RCM specialists paired with transparent reporting and weekly optimization cycles.</p>
+          <div id="model-points" class="stack"></div>
+          <a id="hero-card-link" class="text-link" href="#contact">See our onboarding flow →</a>
+        </aside>
+      </div>
+    </section>
+
+    <section id="partners" class="logo-band">
+      <div class="container">
+        <p class="logo-label">Trusted by teams across:</p>
+        <div class="logos" id="logo-list" aria-label="Partner types"></div>
       </div>
     </section>
 
     <section id="services" class="section container">
-      <h2>Core Services</h2>
-      <div class="grid">
-        <article class="card">
-          <h3>Medical Billing</h3>
-          <p>End-to-end billing support tailored to your specialty and payer mix.</p>
-        </article>
-        <article class="card">
-          <h3>Denial Management</h3>
-          <p>Root-cause analysis and appeals that increase first-pass claim acceptance.</p>
-        </article>
-        <article class="card">
-          <h3>AR Follow-Up</h3>
-          <p>Proactive account follow-up to reduce aging buckets and speed collections.</p>
-        </article>
+      <div class="section-head">
+        <p class="eyebrow">Services</p>
+        <h2>Complete RCM coverage from intake through payment posting</h2>
+      </div>
+      <div class="grid" id="services-grid"></div>
+    </section>
+
+    <section id="results" class="section section-alt">
+      <div class="container split">
+        <div>
+          <p class="eyebrow">Results</p>
+          <h2>Metrics your CFO and operators can trust</h2>
+          <p class="lead">We align front desk workflows, coding quality, payer follow-up, and analytics to improve outcomes.</p>
+        </div>
+        <div class="grid compact" id="results-grid"></div>
       </div>
     </section>
 
-    <section id="why-us" class="section section-alt">
-      <div class="container">
-        <h2>Why teams choose us</h2>
-        <ul class="benefits">
-          <li>Specialized healthcare revenue cycle expertise.</li>
-          <li>Transparent reporting with actionable KPIs.</li>
-          <li>Scalable support for practices and health systems.</li>
-        </ul>
+    <section id="insights" class="section container">
+      <div class="section-head">
+        <p class="eyebrow">Resources</p>
+        <h2>Playbooks and checklists for high-performing RCM teams</h2>
       </div>
+      <div class="grid" id="insights-grid"></div>
     </section>
 
-    <section id="contact" class="section container contact">
-      <h2>Let’s improve your cash flow</h2>
-      <p>Email us at <a href="mailto:hello@rcmhealthsolutions.com">hello@rcmhealthsolutions.com</a></p>
+    <section id="contact" class="section">
+      <div class="container contact-shell">
+        <div>
+          <p class="eyebrow">Get Started</p>
+          <h2>Let’s identify your fastest path to stronger cash flow.</h2>
+          <p class="lead">Share your current KPIs and we’ll propose a focused 30-60-90 day plan.</p>
+        </div>
+        <div class="actions" id="contact-actions"></div>
+      </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container">
+    <div class="container footer-layout">
       <p>© <span id="year"></span> RCM Health Solutions. All rights reserved.</p>
+      <div class="footer-links" id="footer-links"></div>
     </div>
   </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <script src="app.js"></script>
 </body>
 </html>
